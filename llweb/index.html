@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Log Lords Web</title>
+    <link rel="stylesheet" href="TemplateData/style.css">
+    <link rel="shortcut icon" href="TemplateData/favicon.ico" />
+    <script src="TemplateData/UnityProgress.js"></script>
+  </head>
+  <body class="template">
+   <div id="warning-message" align = "center">
+     <p style="text-align:center;">
+    <img src="TemplateData/loglords.png" >
+  
+		<h1><center>This Game is only viewable in landscape mode<br> Please rotate your Screen </center></h1>
+
+      </p>
+
+ </div>
+    <div class="template-wrap clear" id="wrapper">
+      <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" height="100%" width="100%"></canvas>
+      <br>
+    <script type='text/javascript'>
+  var Module = {
+    TOTAL_MEMORY: 67108864,
+    errorhandler: null,			// arguments: err, url, line. This function must return 'true' if the error is handled, otherwise 'false'
+    compatibilitycheck: null,
+    backgroundColor: "#FFFFFF",
+    splashStyle: "Light",
+    dataUrl: "Release/llweb.datagz",
+    codeUrl: "Release/llweb.jsgz",
+    asmUrl: "Release/llweb.asm.jsgz",
+    memUrl: "Release/llweb.memgz",backgroundImage: "background.jpg",
+  };
+  
+  
+ document.onmousedown = function() {window.focus();};
+ 
+</script>
+<script src="Release/UnityLoader.js"></script>
+
+  </body>
+</html>

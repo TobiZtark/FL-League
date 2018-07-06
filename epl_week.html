@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" type="image/png" href="favicon.ico">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<title>Log Lords Admin</title>
+
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+
+
+    <!-- Bootstrap core CSS     -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Animation library for notifications   -->
+    <link href="assets/css/animate.min.css" rel="stylesheet"/>
+
+    <!--  Light Bootstrap Table core CSS    -->
+    <link href="assets/css/light-bootstrap-dashboard.css" rel="stylesheet"/>
+
+    <!--     Fonts and icons     -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+    <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
+	<style>
+#div1,#div2,#div3,#div4,#div5,#div6,#div7,#div8,#div9,#div10,#div11,#div12,#div13,#div14,#div15,#div16,#div17,#div18,#div19,#div20 {
+    width: 350px;
+    height: 35px;
+    padding: 0px;
+    border: 2px solid #aaaaaa;
+}
+ @import url(http://fonts.googleapis.com/css?family=Open+Sans);
+.btn { display: inline-block; *display: inline; *zoom: 1; padding: 4px 10px 4px; margin-bottom: 0; font-size: 13px; line-height: 18px; color: #333333; text-align: center;text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75); vertical-align: middle; background-color: #f5f5f5; background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6); background-image: -ms-linear-gradient(top, #ffffff, #e6e6e6); background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6)); background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6); background-image: -o-linear-gradient(top, #ffffff, #e6e6e6); background-image: linear-gradient(top, #ffffff, #e6e6e6); background-repeat: repeat-x; filter: progid:dximagetransform.microsoft.gradient(startColorstr=#ffffff, endColorstr=#e6e6e6, GradientType=0); border-color: #e6e6e6 #e6e6e6 #e6e6e6; border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25); border: 1px solid #e6e6e6; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05); -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05); cursor: pointer; *margin-left: .3em; }
+.btn:hover, .btn:active, .btn.active, .btn.disabled, .btn[disabled] { background-color: #e6e6e6; }
+.btn-large { padding: 9px 14px; font-size: 15px; line-height: normal; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; }
+.btn:hover { color: #333333; text-decoration: none; background-color: #e6e6e6; background-position: 0 -15px; -webkit-transition: background-position 0.1s linear; -moz-transition: background-position 0.1s linear; -ms-transition: background-position 0.1s linear; -o-transition: background-position 0.1s linear; transition: background-position 0.1s linear; }
+.btn-primary, .btn-primary:hover { text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25); color: #ffffff; }
+.btn-primary.active { color: rgba(255, 255, 255, 0.75); }
+.btn-primary { background-color: #4a77d4; background-image: -moz-linear-gradient(top, #6eb6de, #4a77d4); background-image: -ms-linear-gradient(top, #6eb6de, #4a77d4); background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#6eb6de), to(#4a77d4)); background-image: -webkit-linear-gradient(top, #6eb6de, #4a77d4); background-image: -o-linear-gradient(top, #6eb6de, #4a77d4); background-image: linear-gradient(top, #6eb6de, #4a77d4); background-repeat: repeat-x; filter: progid:dximagetransform.microsoft.gradient(startColorstr=#6eb6de, endColorstr=#4a77d4, GradientType=0);  border: 1px solid #3762bc; text-shadow: 1px 1px 1px rgba(0,0,0,0.4); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.5); }
+.btn-primary:hover, .btn-primary:active, .btn-primary.active, .btn-primary.disabled, .btn-primary[disabled] { filter: none; background-color: #4a77d4; }
+.btn-block { width: 100%; display:block; }
+</style>
+<script>
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+}
+</script>
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="sidebar" data-color="purple" data-image="assets/img/sidebar-5.jpg">
+
+    <!--
+
+        Tip 1: you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple"
+        Tip 2: you can also add an image using data-image tag
+
+    -->
+
+    	<div class="sidebar-wrapper">
+            <div class="logo">
+                <a href="dashboard.html" class="simple-text">
+                    LOG LORDS ADMINISTRATOR
+					<hr>
+				        Weekly Results
+                </a>
+            </div>
+					
+            <ul class="nav">
+                <li class="active">
+                    <a href="epl_week.html">
+                        <i class="pe-7s-graph"></i>
+                        <p>English Premier League</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="user.html">
+                        <i class="pe-7s-graph"></i>
+                        <p>Spanish Laliga</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="table.html">
+                        <i class="pe-7s-graph"></i>
+                        <p>German Bundesliga</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="typography.html">
+                        <i class="pe-7s-graph"></i>
+                        <p>Italian Serie A</p>
+                    </a>
+                </li>
+            </ul>
+			
+    	</div>
+		
+    </div>
+
+    <div class="main-panel">
+        <nav class="navbar navbar-default navbar-fixed">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">English Premier League</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-left">
+
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                           <a href="table.html">
+                               Return to Weekly Results
+                            </a>
+                        </li>
+                    
+					</ul>
+                </div>
+            </div>
+        </nav>
+
+
+        <div class="content" align ="center">
+            <div class="container-fluid">
+                <div class="row">
+				        <div class="col-md-4">
+                        <div class="card">
+                            <div class="header">
+                                <h4 class="title">LIVESCORES FEED</h4>
+                                <p class="category">www.livescores.com</p>
+                            </div>
+							                            <div class="content">
+
+
+                                <div class="footer">
+                                    <div class="legend">
+
+                                    </div>
+                                    <hr>
+                                    <div class="stats">
+                                        <i class="fa fa-history"></i> Click to Enter LIVESCORES.COM
+                                    </div>
+                                </div>
+                            </div>
+							<hr>
+                        </div>
+                    </div>
+					<div class="col-md-4">
+                        <div class="card ">
+                            <div class="header">
+                                <h4 class="title">PREMIER LEAGUE RESULTS</h4>
+                                <p class="category">Submit Current Standings</p>
+                            </div>
+							<br>
+							<form method="post" action ="epl_week.php">
+                            <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+							<div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+							<div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+							<div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+							<div id="div5" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+							<div id="div6" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+							<div id="div7" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+							<div id="div8" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+							<div id="div9" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+							<div id="div10" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+							<div id="div11" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+							<div id="div12" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+							<div id="div13" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+							<div id="div14" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+							<div id="div15" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+							<div id="div16" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+							<div id="div17" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+							<div id="div18" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+							<div id="div19" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+							<div id="div20" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+							
+
+                                    <div class="footer">
+                                    <div class="legend">
+
+                                    </div>
+                                    <hr>
+									
+									<button type="submit" class="btn btn-primary btn-block btn-large">SUBMIT RESULTS</button>
+								</form>			
+                                </div>
+                            </div>
+                        </div>
+					<div class="col-md-4">
+                        <div class="card ">
+                            <div class="header">
+                                <h4 class="title">PREMIER LEAGUE TEAMS</h4>
+                                <p class="category">List of all the Teams in the League</p>
+                            </div>
+							<br>
+                            <div>
+							<img id="0," src="img_logo.gif" draggable="true" ondragstart="drag(event)" width="340" height="33"><br>
+							<img id="1," src="img_logo.gif" draggable="true" ondragstart="drag(event)" width="340" height="33"><br>
+							<img id="2," src="img_logo.gif" draggable="true" ondragstart="drag(event)" width="340" height="33"><br>
+							<img id="3," src="img_logo.gif" draggable="true" ondragstart="drag(event)" width="340" height="33"><br>
+							<img id="4," src="img_logo.gif" draggable="true" ondragstart="drag(event)" width="340" height="33"><br>
+							<img id="5," src="img_logo.gif" draggable="true" ondragstart="drag(event)" width="340" height="33"><br>
+							<img id="6," src="img_logo.gif" draggable="true" ondragstart="drag(event)" width="340" height="33"><br>
+							<img id="7," src="img_logo.gif" draggable="true" ondragstart="drag(event)" width="340" height="33"><br>
+							<img id="8," src="img_logo.gif" draggable="true" ondragstart="drag(event)" width="340" height="33"><br>
+							<img id="9," src="img_logo.gif" draggable="true" ondragstart="drag(event)" width="340" height="33"><br>
+							<img id="10," src="img_logo.gif" draggable="true" ondragstart="drag(event)" width="340" height="33"><br>
+							<img id="11," src="img_logo.gif" draggable="true" ondragstart="drag(event)" width="340" height="33"><br>
+							<img id="12," src="img_logo.gif" draggable="true" ondragstart="drag(event)" width="340" height="33"><br>
+							<img id="13," src="img_logo.gif" draggable="true" ondragstart="drag(event)" width="340" height="33"><br>
+							<img id="14," src="img_logo.gif" draggable="true" ondragstart="drag(event)" width="340" height="33"><br>
+							<img id="15," src="img_logo.gif" draggable="true" ondragstart="drag(event)" width="340" height="33"><br>
+							<img id="16," src="img_logo.gif" draggable="true" ondragstart="drag(event)" width="340" height="33"><br>
+							<img id="17," src="img_logo.gif" draggable="true" ondragstart="drag(event)" width="340" height="33"><br>
+							<img id="18," src="img_logo.gif" draggable="true" ondragstart="drag(event)" width="340" height="33"><br>
+							<img id="19," src="img_logo.gif" draggable="true" ondragstart="drag(event)" width="340" height="33"><br>
+						
+							</div>
+                                <div class="footer">
+                                    <div class="legend">
+
+                                    </div>
+                                    <hr>
+                                    <div class="stats">
+                                        <i class="fa fa-check"></i> Drag teams to the Left to submit
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    </div>
+
+                </div>
+                
+            </div>
+        </div>
+
+
+ <footer class="footer">
+            <div class="container-fluid">
+
+                <p class="copyright pull-right">
+                    &copy; <script>document.write(new Date().getFullYear())</script> <a href="http://www.prananet.org">Prananet Technologies Limited</a>
+                </p>
+            </div>
+        </footer>
+
+    </div>
+</div>
+
+
+</body>
+
+    <!--   Core JS Files   -->
+    <script src="assets/js/jquery-1.10.2.js" type="text/javascript"></script>
+	<script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+
+	<!--  Checkbox, Radio & Switch Plugins -->
+	<script src="assets/js/bootstrap-checkbox-radio-switch.js"></script>
+
+	<!--  Charts Plugin -->
+	<script src="assets/js/chartist.min.js"></script>
+
+    <!--  Notifications Plugin    -->
+    <script src="assets/js/bootstrap-notify.js"></script>
+
+    <!--  Google Maps Plugin    -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+
+    <!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
+	<script src="assets/js/light-bootstrap-dashboard.js"></script>
+
+	<!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
+	<script src="assets/js/demo.js"></script>
+
+
+</html>
